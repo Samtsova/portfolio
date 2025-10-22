@@ -44,7 +44,7 @@ export const Experience = () => {
 
 const StyledExperience = styled.section`
 background-color: #f6d1f9;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

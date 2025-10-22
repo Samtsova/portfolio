@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlexWrapper } from "../FlexWrapper";
 import { Icon } from "../icon/Icon";
+import { theme } from "../../styles/Theme";
 
 type linkPropsType = {
     iconId: string
@@ -23,6 +24,7 @@ export const Link = (props: linkPropsType) => {
 
 
 const StyledLink = styled.a`
-    
+    margin-left: 10px;
+    color: ${theme.colors.fontBlack}
 `
 
