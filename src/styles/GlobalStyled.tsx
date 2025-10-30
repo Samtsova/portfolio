@@ -17,7 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        color: ${theme.colors.fontDark}
+        color: ${theme.colors.fontDark};
+        min-width: 360px;
 }
 
 a {
@@ -35,7 +36,11 @@ button {
 
 section:nth-of-type(n) {
     background-color: ${theme.colors.primaryBG};
-    padding: 100px 0;
+    padding: 60px 0;
+
+    @media ${theme.media.mobile} {
+        padding: 40px 0;
+    }
 }
 
 `

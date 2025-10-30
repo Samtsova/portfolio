@@ -1,35 +1,29 @@
 import { Key } from "react";
 import { Icon } from "../icon/Icon";
-import styled from "styled-components";
+import { S } from "./SocialList_Styles"
 
-export const SocialList = (props: {linkItems: any}) => {
+const icons = [
+        {name: "github", width: "30px", height: "30px", viewbox: "0 0 30 30"},  
+        {name: "twitter", width: "32px", height: "32px", viewbox:"0 0 32 32"}, 
+        {name: "linkedin", width: "30px", height: "30px", viewbox:"0 0 30 30"},
+    ]
+
+export const SocialList:React.FC = () => {
 
     return (
-        <StyleSocialList>
-                {props.linkItems.map((item: { name: string; width: string; height: string; viewbox: string}, index: Key )=>{
+        <S.SocialList>
+                {icons.map((item: { name: string; width: string; height: string; viewbox: string}, index: Key )=>{
                     return (
-                        <SocialItem key={index}>
-                            <SocialLink>
+                        <S.SocialItem key={index}>
+                            <S.SocialLink>
                                 <Icon iconId = {item.name} width={item.width} height={item.height} viewBox={item.viewbox}/>
-                            </SocialLink>
-                        </SocialItem>
+                            </S.SocialLink>
+                        </S.SocialItem>
                     )
                 })}        
-        </StyleSocialList>
+        </S.SocialList>
     );
 }
 
-const StyleSocialList = styled.ul`
-    display: flex;
-`
 
-const SocialItem = styled.li`
-    display: flex;
-    align-items: center;
-    margin: 0 10px;
-`
-
-const SocialLink = styled.a`
-    
-`
 

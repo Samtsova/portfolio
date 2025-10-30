@@ -1,8 +1,6 @@
-import styled from "styled-components"
 import { Link } from "../link/Link"
-import { Button } from "../Button"
 import { FlexWrapper } from "../FlexWrapper";
-import { theme } from "../../styles/Theme";
+import { S } from "./ExperienceItem_Styles"
 
 type ExperienceItemPropsType = {
     position: string;
@@ -12,64 +10,22 @@ type ExperienceItemPropsType = {
     workDay: string
 }
 
-export const ExperienceItem = (props: ExperienceItemPropsType) => {
+export const ExperienceItem: React.FC<ExperienceItemPropsType> = (props: ExperienceItemPropsType) => {
     return (
-        <StyledExperienceItem>
+        <S.ExperienceItem>
             <FlexWrapper direction="column">
-                <ExperienceDiscription>{props.position}</ExperienceDiscription>
+                <S.ExperienceDiscription>{props.position}</S.ExperienceDiscription>
                     <FlexWrapper >
                         <Link iconId="workPlace" textLink={props.organisationName} width="12px" height="12px" viewBox="0 0 12 12"/>
                         <Link iconId="location" textLink={props.location} width="12px" height="12px" viewBox="0 0 12 12"/> 
                     </FlexWrapper>
             </FlexWrapper>
-            <FlexWrapper  direction="column" justify="center">
-                <Button>{props.workDay }</Button>    
-                <Link iconId="calendar" textLink={props.period} />   
+            <FlexWrapper  direction="column" justify="center"  >
+                <span>{props.workDay }</span>    
+                <Link iconId="calendar" width="16px" height="12px" viewBox="0 0 16 12" textLink={props.period} />   
             </FlexWrapper>
-        </StyledExperienceItem>
+        </S.ExperienceItem>
     )
 }
 
-const StyledExperienceItem = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    position: relative;
-    
-    &::before {
-        content: " ";
-        display: inline-block;
-        height: 2px;
-        background-color: ${theme.colors.fontLine};
-    
-        position: absolute;
-        bottom: -20px;
-        left: 10px;
-        right: 10px;
-        z-index: 1; 
-    }
 
-    & > ${FlexWrapper}:first-child {
-        width: 60%;
-
-        & > ${FlexWrapper} > ${FlexWrapper}:first-child {   
-            width: 80% ;
-            justify-content: flex-start;
-        }
-    }
-
-    & > ${FlexWrapper}:last-child {
-        width: 30%;
-        & >${FlexWrapper} {
-            justify-content: flex-start;
-        }
-    }
-    
-
-`
-const ExperienceDiscription = styled.h4`
-    font-weight: 400;
-    font-size: 20px;
-    letter-spacing: 1px;
-` 

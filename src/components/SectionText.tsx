@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../styles/Theme";
+import { font } from "../styles/Common";
 
 export const SectionText = styled.p`
+    ${font({weight: 400, Fmax: 32, Fmin: 24})}
     color: ${theme.colors.fontDark};
     text-align: center;
-    font-weight: 400;
-    font-size: 32px;
     margin-bottom: 100px;
 `
