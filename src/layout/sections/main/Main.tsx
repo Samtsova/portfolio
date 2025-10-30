@@ -73,11 +73,13 @@ const Name = styled.span`
 const MainTitle = styled.h1`
     font-weight: 700;
     font-size: 58px;
-    letter-spacing: -1px
+    letter-spacing: -1px;
+    color: ${theme.colors.fontTitle}
 `
 
 const SmallText = styled.h2`
     font-weight: 700;
     font-size: 58px;
     letter-spacing: -1px;
+    color: ${theme.colors.fontTitle}
 `

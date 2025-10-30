@@ -9,8 +9,8 @@ export const Skills= () => {
     return (
         <StyledSkills>
             <Container>
-                <SectionTitle>My Tech Stack</SectionTitle>
-                <SectionText> Technologies I’ve been working with recently</SectionText>
+                <SectionTitle>My Tech Stack</SectionTitle>               
+                <SectionText> Technologies I’ve been working with recently </SectionText>
                 <FlexWrapper wrap="wrap" justify="space-between" gap="60px">
                     <Icon iconId = "html" viewBox="0 0 120 120"/>
                     <Icon iconId = "css" viewBox="0 0 120 120"/>

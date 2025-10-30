@@ -12,7 +12,7 @@ export const Contact = () => {
                     <StyledForm>
                         <Field placeholder="name"/>
                         <Field placeholder="subject"/>
-                        <Field placeholder="message" as={"textarea"}/>
+                        <Field placeholder="message" as="textarea"/>
                         <Button type="submit">Send message</Button>
                     </StyledForm>  
                 </Container>              
@@ -31,6 +31,11 @@ const StyledForm = styled.form`
     align-items: center;
     gap: 16px;
     margin: 0 auto;
+
+    textarea {
+        resize: none;
+        height: 155px;
+    }
 `
 
 const Field = styled.input`
@@ -41,6 +46,13 @@ const Field = styled.input`
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: ${theme.colors.fontBlack}
+    color: ${theme.colors.fontBlack};
 
+    &::placeholder {
+        text-transform: capitalize;
+    }
+    
+    &:focus-visible{
+        outline: 1px solid ${theme.colors.accentFirst};
+    }
 `

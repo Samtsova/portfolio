@@ -8,6 +8,7 @@ export const theme = {
         fontTitle: "#42446E",
         fontDark: "#666666",
         fontLight: "#A7A7A7",
-        fontBlack: "#000000"
+        fontBlack: "#000000",
+        fontLine: "#EBEAED"
     }
 }

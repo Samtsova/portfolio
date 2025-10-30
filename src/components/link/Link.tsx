@@ -15,7 +15,7 @@ type linkPropsType = {
 export const Link = (props: linkPropsType) => {
 
     return (
-        <FlexWrapper>
+        <FlexWrapper justify="center" align="center">
             <Icon iconId = {props.iconId} width={props.width || "20px"} height={props.height|| "20px"} viewBox={props.viewBox||"0 0 20 20"}/>
             <StyledLink href="#">{props.textLink}</StyledLink> 
         </FlexWrapper>
@@ -25,6 +25,10 @@ export const Link = (props: linkPropsType) => {
 
 const StyledLink = styled.a`
     margin-left: 10px;
-    color: ${theme.colors.fontBlack}
+    color: ${theme.colors.fontLight};
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 28px;
+    letter-spacing: 1px;
 `
 
