@@ -9,24 +9,29 @@ export const Button = styled.button`
     cursor: pointer;
     padding: 10px;
     color: ${theme.colors.fontDark};
-
     
+
     position: relative;
     z-index: 0;
-
-    &:hover {
-        &::after {
+    &::after {
             content: " ";
                     position: absolute;
                     display: inline-block;
                     height: 4px;
                     width: 70%;
                     bottom: 5px;
-                    left: 50%;
+                    left: 15%;
                     transform: translateX(-50%);
                     border-radius: 5px;
                     background-image: linear-gradient( to right, ${theme.colors.accentFirst} 50%, ${theme.colors.accentSecond} 100%);
-                    z-index: -1;
+                    z-index: -1; 
+                    transform: scale(0);                 
+                    transition: .2s ease-in-out;
         }
+
+    &:hover {
+        &::after {
+        transform: scale(1);
+    }
     }
 `

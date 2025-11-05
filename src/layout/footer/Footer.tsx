@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                     </FlexWrapper>                
                 </FlexWrapper>
                 <FlexWrapper justify="space-between">
-                    {width <breakpoint ? <></> : <DesktopMenu menuItems={items}/>}
+                    {width <breakpoint ? <></> : <DesktopMenu />}
                     <S.CopyrightWrapper>
                         <S.Copyright>Designed and built by  
                         <S.Gradient> Samtsova </S.Gradient>

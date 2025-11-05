@@ -66,6 +66,10 @@ const MainTitle = styled.h1`
     letter-spacing: -1px;
     color: ${theme.colors.fontTitle};
     margin-bottom: 50px;
+
+    p {
+        display: none;
+    }
 `
 
 const SmallText = styled.h2`

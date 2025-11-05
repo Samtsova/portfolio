@@ -41,7 +41,7 @@ const educationData = [
 
 export const Experience: React.FC = () => {
     return(       
-        <S.Experience>
+        <S.Experience id={"about"}>
             <Container>
                     <FlexWrapper direction="column">
                         <S.Title>About Me</S.Title>

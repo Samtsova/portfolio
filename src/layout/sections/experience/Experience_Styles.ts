@@ -6,6 +6,7 @@ import { Container } from "../../../components/Container"
 import abstraction from '../../../assets/images/drawing.svg'
 
 const Experience = styled.section`
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

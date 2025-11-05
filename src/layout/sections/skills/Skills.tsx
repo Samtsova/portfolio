@@ -4,6 +4,7 @@ import { Icon } from "../../../components/icon/Icon"
 import { SectionText } from "../../../components/SectionText.tsx"
 import { Container } from "../../../components/Container.tsx"
 import { S } from "./Skills_Styles.ts"
+import { Fade } from "react-awesome-reveal"
 
 const skillData =[
     {
@@ -57,18 +58,18 @@ const skillData =[
 
 export const Skills: React.FC= () => {
     return (
-        <S.Skills>
+        <S.Skills id={"skills"}>
             <Container>
                 <SectionTitle>My Tech Stack</SectionTitle>               
                 <SectionText> Technologies I’ve been working with recently </SectionText>
                 <FlexWrapper wrap="wrap" justify="center" >
-
-                    {skillData.map((item, index) => {
-                        return <S.IconWrapper>
-                        <Icon iconId = {item.iconId} viewBox={item.viewBox} key={index}/>
-                    </S.IconWrapper>
-                    })}
-
+                    <Fade cascade={true} damping={0.1}>
+                        {skillData.map((item, index) => {
+                            return <S.IconWrapper>
+                            <Icon iconId = {item.iconId} viewBox={item.viewBox} key={index}/>
+                        </S.IconWrapper>                    
+                        })}
+                    </Fade>
                 </FlexWrapper>
             </Container>
         </S.Skills>

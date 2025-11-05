@@ -1,14 +1,12 @@
 import { Menu } from "./Menu";
 import { S } from './Menu_Styles'
 
-type menuItemPropsType = {
-    menuItems: Array<string>
-}
 
-export const DesktopMenu: React.FC<menuItemPropsType> = (props: menuItemPropsType) => {
+
+export const DesktopMenu: React.FC = () => {
     return (
         <S.DesktopMenu>
-            <Menu menuItems={props.menuItems}/>           
+            <Menu />           
         </S.DesktopMenu>
     );
 }

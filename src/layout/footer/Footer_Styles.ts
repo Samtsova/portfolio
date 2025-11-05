@@ -3,8 +3,10 @@ import { theme } from "../../styles/Theme"
 import { font } from "../../styles/Common"
 import { FlexWrapper } from "../../components/FlexWrapper"
 
-const Footer = styled.footer`
+const Footer = styled.section`
+    position: relative;
     padding: 50px 0;
+
 
     ${FlexWrapper}:first-child {
         position: relative;

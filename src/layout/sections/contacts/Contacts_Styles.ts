@@ -3,6 +3,7 @@ import { theme } from "../../../styles/Theme"
 import { Button } from "../../../components/Button"
 
 const Contacts = styled.section`
+    position: relative;
 `
 
 const Form = styled.form`
@@ -35,7 +36,7 @@ const Form = styled.form`
 `
 
 const Field = styled.input`
-    width: 100%;
+    width: 540px;
     border: 1px solid ${theme.colors.fontDark};
     padding: 7px 15px;
 
@@ -50,6 +51,10 @@ const Field = styled.input`
     
     &:focus-visible{
         outline: 1px solid ${theme.colors.accentFirst};
+    }
+
+    @media ${theme.media.tablet} {
+        width: calc(100vw - 100px)
     }
 `
 

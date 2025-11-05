@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { Icon } from "../icon/Icon";
+import { animateScroll as scroll } from "react-scroll";
 
 export const Logo:React.FC = () => {
 
     return (
-        <LogoLink href="">
+        <LogoLink onClick={()=>{scroll.scrollToTop()}}>
             <Icon iconId = {'logo'} width="50px" height="50px" viewBox="0 0 20 20"/>
         </LogoLink> 
     );

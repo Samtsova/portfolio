@@ -1,13 +1,10 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../styles/Theme";
 import { font } from "../../styles/Common";
+import { Link } from "react-scroll";
 
-
-const Link = styled.a`
-    ${font({family: 'DM Sans' , weight: 500, Fmax: 20, Fmin: 16})}
-    color: ${theme.colors.fontDark};
-    text-align: center;
-    color: transparent
+const MenuItem =styled.li`
+    position: relative;
 `
 
 const Mask = styled.span`
@@ -19,6 +16,7 @@ const Mask = styled.span`
     overflow: hidden;
     /* outline: 1px solid red; */
     color: ${theme.colors.fontDark};
+    transition: ${theme.animations.transition};
 
     & + & {
         top: 50%;
@@ -27,12 +25,18 @@ const Mask = styled.span`
             transform: translateY(-50%);
         }
     }
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 `
 
-const MenuItem =styled.li`
-position: relative;
+const NavLink = styled(Link)`
+    ${font({family: 'DM Sans' , weight: 500, Fmax: 20, Fmin: 16})}
+    color: ${theme.colors.fontDark};
+    text-align: center;
+    color: transparent;
 
-&::before {
+    &::before {
     content: " ";
     display: inline-block;
     height: 1px;
@@ -45,9 +49,10 @@ position: relative;
     z-index: 1;
 
     transform: scale(0);
+    transition: ${theme.animations.transition};
 }
 
-&:hover {
+&:hover, &.active {
     &::before {
         transform: scale(1);
     }
@@ -61,7 +66,14 @@ position: relative;
     }
 }
 } 
+
+    @media ${theme.media.tablet} {
+        color: white;
+    }
 `
+
+
+
 
 
 const MobileMenu = styled.nav<any>`
@@ -73,28 +85,35 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     right: 0;
     bottom: 0;
     z-index: 999;
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image:  linear-gradient( to right, ${theme.colors.accentFirst} 20%, ${theme.colors.accentSecond} 100%); 
-    opacity: 0.9;
-
-    ${props => props.isOpen && css<{isOpen:boolean}>`        
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
-
+    opacity: 0.6;
+    transform: translateY(-100%);
+    transition: .8s ease-in-out;
 
     ul {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        gap: 40px;
+        gap: 10px;
+        transition: .8s ease-in-out;
     }
 
     ul:last-child {
         margin-right: 30px;
     }
+
+    
+    ${props => props.isOpen && css<{isOpen:boolean}>`        
+        transform: translateY(0%);
+
+        & ul {
+            gap: 50px
+        }
+    `}
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`
@@ -154,7 +173,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
 
             ${props => props.isOpen && css<{isOpen:boolean}>`        
                 top: -100px;
-                right: 0;
+                right: -100px;
                 width: 200px;
                 height: 200px;
             `}   
@@ -183,7 +202,7 @@ const DesktopMenu = styled.nav<any>`
 
 
 export const S = {
-    Link,
+    NavLink,
     MenuItem,
     Mask,
     MobileMenu,

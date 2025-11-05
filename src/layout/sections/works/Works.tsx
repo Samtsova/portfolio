@@ -10,6 +10,7 @@ import project5 from "../../../assets/images/projects/project-5.jpg"
 import project6 from "../../../assets/images/projects/project-6.jpg"
 import { Container } from "../../../components/Container"
 import { S } from "./Works_Styled"
+import { Fade } from "react-awesome-reveal"
 
 const workData = [
     {
@@ -52,19 +53,20 @@ const workData = [
 
 export const Works: React.FC = () => {
     return (
-        <S.Works>
+        <S.Works id={"works"}>
             <Container>
                 <SectionTitle>Projects</SectionTitle>
                 <SectionText>Things I’ve built so far</SectionText>
                 <FlexWrapper wrap="wrap" justify="space-around">
-                    {workData.map((item, index) => {
-                        return  <Work title={item.title}
-                            text={item.text}
-                            description={item.description}
-                            src={item.src}
-                            key={index}/>
-                    })}
-
+                    <Fade cascade={true} damping={0.2}>
+                        {workData.map((item, index) => {
+                            return  <Work title={item.title}
+                                text={item.text}
+                                description={item.description}
+                                src={item.src}
+                                key={index}/>
+                        })}
+                    </Fade>
                 </FlexWrapper>
             </Container>
         </S.Works>
