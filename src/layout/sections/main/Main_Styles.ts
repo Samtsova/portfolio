@@ -37,8 +37,8 @@ const FhotoWrapper = styled.div`
 `
 const Photo = styled.img`
     
-    width: 349px;
-    height: 349px;
+    width: 329px;
+    height: 329px;
     object-fit: cover;    
     border-radius: 230px;
 
@@ -62,7 +62,7 @@ const Name = styled.span`
 `
 
 const MainTitle = styled.h1`
-    ${font({weight: 700, Fmax: 58, Fmin: 36})}
+    ${font({weight: 700, Fmax: 54, Fmin: 36})}
     letter-spacing: -1px;
     color: ${theme.colors.fontTitle};
     margin-bottom: 50px;
@@ -73,7 +73,7 @@ const MainTitle = styled.h1`
 `
 
 const SmallText = styled.h2`
-    ${font({weight: 700, Fmax: 58, Fmin: 24})}
+    ${font({weight: 700, Fmax: 54, Fmin: 24})}
     letter-spacing: -1px;
     color: ${theme.colors.fontTitle}
 `
